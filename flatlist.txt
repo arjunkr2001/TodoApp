@@ -1,0 +1,171 @@
+// import React, { useState } from 'react';
+// import { StyleSheet, View, FlatList, Alert, TouchableWithoutFeedback, Keyboard } from 'react-native';
+// import Header from './components/header';
+// import TodoItem from './components/todoItem';
+// import AddTodo from './components/addTodo';
+
+// export default function App() {
+//   const [todos, setTodos] = useState([
+//     { text: 'buy coffee', key: '1' },
+//     { text: 'create an app', key: '2' },
+//     { text: 'play on the switch', key: '3' },
+//     { text: 'buy coffee', key: '8657' },
+//     { text: 'create an app', key: '567567567567' },
+//     { text: 'play on the switch', key: '56756' },
+//     { text: 'buy coffee', key: '65' },
+//     { text: 'create an app', key: '9878' },
+//     { text: 'play on the switch', key: '9644' },
+//     { text: 'buy coffee', key: '854' },
+//     { text: 'create an app', key: '76' },
+//     { text: 'play on the switch', key: '445' },
+//     { text: 'buy coffee', key: '999' },
+//     { text: 'create an app', key: '67' },
+//     { text: 'play on the switch', key: '45' },
+//   ]);
+
+//   const pressHandler = (key) => {
+//     setTodos(prevTodos => {
+//       return prevTodos.filter(todo => todo.key != key);
+//     });
+//   };
+
+//   const submitHandler = (text) => {
+//     if(text.length > 3){
+//       setTodos(prevTodos => {
+//         return [
+//           { text, key: Math.random().toString() },
+//           ...prevTodos
+//         ];
+//       });
+//     } else {
+//       Alert.alert('OOPS', 'Todo must be over 3 characters long', [
+//         {text: 'Understood', onPress: () => console.log('alert closed') }
+//       ]);
+//     }
+//   };
+
+//   function ScrollPortion(){
+//     return(
+      
+//         <FlatList
+
+//           data={todos}
+//           renderItem={({ item }) => (
+//             <TodoItem item={item} pressHandler={pressHandler} />
+//           )}
+//         />
+      
+//     )
+//   }
+
+//   return (
+//     // <Sandbox />
+//     <TouchableWithoutFeedback onPress={() => {
+//       Keyboard.dismiss();
+//       console.log('dismissed');
+//     }}>
+//       <View style={styles.container}>
+//         <Header />
+//         <View style={styles.content}>
+//           <AddTodo  />
+//           <View style={styles.list}>
+//           <ScrollPortion />
+//           </View>
+//         </View>
+//       </View>
+//     </TouchableWithoutFeedback>
+//   );
+// }
+
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     backgroundColor: '#fff',
+//   },
+//   content: {
+//     padding: 40,
+//     //backgroundColor: 'grey',
+//     flex: 1,
+//   },
+//   list: {
+//     marginTop: 20,
+//     backgroundColor: 'lightgrey',
+//     flex: 1,
+//     //overflow: scroll,
+//     height: 50
+//   },
+// });
+
+
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, TextInput, TouchableOpacity, View, KeyboardAvoidingView, FlatList, ScrollView, SectionList, ProgressViewIOSComponent, SafeAreaView } from 'react-native';
+//import { MaterialIcons } from '@expo/vector-icons';
+//import { useState } from 'react';
+import { Dimensions } from 'react-native';
+
+const windowHeight = Dimensions.get('window').height;
+
+export default function App(){
+  
+  let data = [
+    {
+      key:'1',
+      title:'abcd'
+    },
+    {
+      key:'2',
+      title:'bcd'
+    },
+    {
+      key:'3',
+      title:'vbcd'
+    },
+    {
+      key:'4',
+      title:'hfbcd'
+    },
+    {
+      key:'5',
+      title:'jkucd'
+    },
+    {
+      key:'6',
+      title:'abcd'
+    },
+    {
+      key:'7',
+      title:'bcd'
+    },
+    {
+      key:'8',
+      title:'vbcd'
+    },
+    {
+      key:'9',
+      title:'hfbcd'
+    },
+    {
+      key:'10',
+      title:'jkucd'
+    },
+  ]
+
+  return(
+    <SafeAreaView style={{flex:1,backgroundColor:'red',maxHeight:windowHeight}}>
+      <View style={{flex:1,justifyContent:'center',alignItems:'center',backgroundColor:'white'}}>
+        <Text>hello</Text>
+      </View>
+      <View style={{flex:2,margin:10}}>
+        <FlatList
+          data={data}
+          renderItem={({item})=>(
+            <Text style={{padding:20,margin:10,backgroundColor:'grey'}}>{item.title}</Text>
+          )}
+        />
+      </View>
+      <View style={{flex:0.5}}>
+        <Text>footer</Text>
+      </View>
+    </SafeAreaView>
+  )
+}
