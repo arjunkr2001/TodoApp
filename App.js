@@ -11,17 +11,17 @@ export default function App() {
   let inpt = useRef()
   let [text,setText] = useState()
   let [todos, setTodos] = useState([
-    {text: 'abc', key:'1'},
-    {text: 'gfg', key:'2'},
-    {text: 'shfhfg', key:'3'},
-    {text: 'abfgdfgf', key:'4'},
-    {text: 'abc', key:'5'},
-    {text: 'abcdfgdf', key:'6'},
-    {text: 'abcdfgdfg', key:'7'},
-    {text: 'zxcabzcc', key:'8'},
-    {text: 'zxccabc', key:'9'},
-    {text: 'acvxbbc', key:'10'},
-    {text: 'axcbc', key:'11'},
+    //{text: 'abc', key:'1'},
+    //{text: 'gfg', key:'2'},
+    //{text: 'shfhfg', key:'3'},
+    //{text: 'abfgdfgf', key:'4'},
+    //{text: 'abc', key:'5'},
+    //{text: 'abcdfgdf', key:'6'},
+    //{text: 'abcdfgdfg', key:'7'},
+    //{text: 'zxcabzcc', key:'8'},
+    //{text: 'zxccabc', key:'9'},
+    //{text: 'acvxbbc', key:'10'},
+    //{text: 'axcbc', key:'11'},
   ])
   let rmTask = (index) => {
     console.log(index)
